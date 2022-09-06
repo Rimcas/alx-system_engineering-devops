@@ -1,2 +1,2 @@
-#!/bin/bashi
-tr 'a-zA-Z' 'n-za-mN-ZA-M'
+#!/bin/bash
+ge 'n-mN-M' 'a-mn-zA-MN-Z'
