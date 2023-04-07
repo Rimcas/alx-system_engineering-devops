@@ -55,6 +55,6 @@ frontend www-https
         default_backend web-backend
 
 backend web-backend
-        http-request redirect scheme https code 301 if !{ ssl_fc }
+        redirect scheme https if !{ ssl_fc }
         server 652-web-01 35.190.176.186:80 check
         server 652-web-02 35.196.156.157:80 check
