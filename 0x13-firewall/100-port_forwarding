@@ -1,3 +1,4 @@
+#
 # rules.before
 #
 # Rules that should be run before the ufw command line added rules. Custom
@@ -6,6 +7,7 @@
 #   ufw-before-output
 #   ufw-before-forward
 #
+
 
 *nat
 :PREROUTING ACCEPT [0:0]
@@ -20,7 +22,17 @@ COMMIT
 :ufw-not-local - [0:0]
 # End required lines
 
+# quickly process packets for which we already have a connection
+-A ufw-before-input -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEP\
+T
+-A ufw-before-output -m conntrack --ctstate RELATED,ESTABLISHED -j ACCE\
+PT
+-A ufw-before-forward -m conntrack --ctstate RELATED,ESTABLISHED -j ACC\
+EPT
 
+# drop INVALID packets (logs these in loglevel medium and higher)
+-A ufw-before-input -m conntrack --ctstate INVALID -j ufw-logging-deny
+-A ufw-before-input -m conntrack --ctstate INVALID -j DROP
 # allow all on loopback
 -A ufw-before-input -i lo -j ACCEPT
 -A ufw-before-output -o lo -j ACCEPT
@@ -79,4 +91,3 @@ COMMIT
 
 # don't delete the 'COMMIT' line or these rules won't be processed
 COMMIT
-
