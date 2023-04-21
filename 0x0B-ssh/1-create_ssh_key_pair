@@ -4,4 +4,4 @@
 # Name of the created private key must be school
 # The created key must be protected by the passphrase betty
 
-ssh-keygen -b 4096 -f holberton -N betty
+ssh-keygen -b 4096 -f school -N betty
