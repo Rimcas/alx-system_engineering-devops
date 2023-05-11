@@ -1,0 +1,5 @@
+# Curl command
+curl -X GET "https://api.datadoghq.com/api/v1/dashboard" \
+-H "Accept: application/json" \
+-H "DD-API-KEY: ${83c5dd09b7e7cf7056f281164f654305}" \
+-H "DD-APPLICATION-KEY: ${b72a186d173746f24f3ada7d5ad19d9f531f950d}"
