@@ -18,4 +18,5 @@ Improved log management: We have implemented a more effective log rotation and m
 Increased monitoring: We have implemented more comprehensive monitoring of our web stack, including regular system audits and alerts for disk space usage and other critical metrics.
 Enhanced incident response: We have updated our incident response procedures to ensure faster response times and more effective communication with customers during outages or disruptions.
 Conclusion: We deeply apologize for the disruption caused by this outage and are committed to ensuring the highest levels of reliability and uptime for our customers. We will continue to invest in improving our systems and processes to prevent similar incidents in the future.
-
+ 
+Diagram image {https://ibb.co/7k6tQ5X}.
